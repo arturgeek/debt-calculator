@@ -162,12 +162,12 @@ export const AmortizationCalculator = () => {
                 <div className="space-y-2">
                   <Label htmlFor="loanAmount" className="flex items-center gap-2">
                     <DollarSign className="w-4 h-4" />
-                    Loan Amount ($)
+                    Loan Amount (COP)
                   </Label>
                   <Input
                     id="loanAmount"
                     type="number"
-                    placeholder="25000"
+                    placeholder="25000000"
                     value={loanAmount}
                     onChange={(e) => setLoanAmount(e.target.value)}
                   />
@@ -208,15 +208,15 @@ export const AmortizationCalculator = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 p-4 bg-accent rounded-lg">
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">Monthly Payment</p>
-                    <p className="text-2xl font-bold text-primary">${loanResult.monthlyPayment.toFixed(2)}</p>
+                    <p className="text-2xl font-bold text-primary">${loanResult.monthlyPayment.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP</p>
                   </div>
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">Total Payment</p>
-                    <p className="text-2xl font-bold text-foreground">${loanResult.totalPayment.toFixed(2)}</p>
+                    <p className="text-2xl font-bold text-foreground">${loanResult.totalPayment.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP</p>
                   </div>
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">Total Interest</p>
-                    <p className="text-2xl font-bold text-warning">${loanResult.totalInterest.toFixed(2)}</p>
+                    <p className="text-2xl font-bold text-warning">${loanResult.totalInterest.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP</p>
                   </div>
                 </div>
               )}
@@ -239,12 +239,12 @@ export const AmortizationCalculator = () => {
                 <div className="space-y-2">
                   <Label htmlFor="monthlyPayment" className="flex items-center gap-2">
                     <DollarSign className="w-4 h-4" />
-                    Monthly Payment ($)
+                    Monthly Payment (COP)
                   </Label>
                   <Input
                     id="monthlyPayment"
                     type="number"
-                    placeholder="850"
+                    placeholder="850000"
                     value={monthlyPayment}
                     onChange={(e) => setMonthlyPayment(e.target.value)}
                   />
@@ -298,7 +298,7 @@ export const AmortizationCalculator = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 p-4 bg-accent rounded-lg">
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">Remaining Balance</p>
-                    <p className="text-2xl font-bold text-primary">${remainingResult.remainingBalance.toFixed(2)}</p>
+                    <p className="text-2xl font-bold text-primary">${remainingResult.remainingBalance.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP</p>
                   </div>
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">Payments Left</p>
@@ -306,7 +306,7 @@ export const AmortizationCalculator = () => {
                   </div>
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">Total Remaining</p>
-                    <p className="text-2xl font-bold text-warning">${remainingResult.totalRemaining.toFixed(2)}</p>
+                    <p className="text-2xl font-bold text-warning">${remainingResult.totalRemaining.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP</p>
                   </div>
                 </div>
               )}

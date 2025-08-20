@@ -42,16 +42,16 @@ export const AmortizationTable: React.FC<AmortizationTableProps> = ({ schedule, 
                 >
                   <TableCell className="font-medium">{row.month}</TableCell>
                   <TableCell className="text-right font-mono">
-                    ${row.payment.toFixed(2)}
+                    ${row.payment.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP
                   </TableCell>
                   <TableCell className="text-right font-mono text-success">
-                    ${row.principal.toFixed(2)}
+                    ${row.principal.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP
                   </TableCell>
                   <TableCell className="text-right font-mono text-warning">
-                    ${row.interest.toFixed(2)}
+                    ${row.interest.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP
                   </TableCell>
                   <TableCell className="text-right font-mono font-semibold">
-                    ${row.balance.toFixed(2)}
+                    ${row.balance.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP
                   </TableCell>
                 </TableRow>
               ))}
