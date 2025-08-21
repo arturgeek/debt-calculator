@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Cursor personal settings (don't commit)
+.cursor/settings.json
+.cursor/memories/
+
+# But DO commit .cursor/rules/ (project standards)
