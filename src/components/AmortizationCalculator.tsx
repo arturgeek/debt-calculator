@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Calculator, DollarSign, Percent, Calendar } from 'lucide-react';
 import { AmortizationTable } from './AmortizationTable';
+import { useToast } from '@/hooks/use-toast';
 
 interface LoanCalculation {
   monthlyPayment: number;
@@ -34,6 +35,8 @@ interface RemainingCalculation {
 }
 
 export const AmortizationCalculator = () => {
+  const { toast } = useToast();
+  
   // Standard calculator state
   const [loanAmount, setLoanAmount] = useState('');
   const [interestRate, setInterestRate] = useState('');
@@ -47,12 +50,50 @@ export const AmortizationCalculator = () => {
   const [originalTerm, setOriginalTerm] = useState('');
   const [remainingResult, setRemainingResult] = useState<RemainingCalculation | null>(null);
 
+  const validateInputs = (values: { [key: string]: string | number }) => {
+    const errors: string[] = [];
+    
+    Object.entries(values).forEach(([key, value]) => {
+      // Convert to number for comparison
+      const numValue = typeof value === 'string' ? parseFloat(value) : value;
+      
+      if (!numValue || numValue <= 0 || isNaN(numValue)) {
+        errors.push(`${key.replace(/([A-Z])/g, ' $1').toLowerCase()} is required and must be greater than 0`);
+      }
+    });
+    
+    return errors;
+  };
+
   const calculateLoan = () => {
     const principal = parseFloat(loanAmount);
     const rate = parseFloat(interestRate) / 100 / 12;
     const months = parseInt(termMonths);
 
-    if (!principal || !rate || !months) return;
+    // Validate inputs
+    const errors = validateInputs({
+      'Loan Amount': principal,
+      'Interest Rate': parseFloat(interestRate),
+      'Term Months': months
+    });
+
+    if (errors.length > 0) {
+      toast({
+        title: "Invalid Input",
+        description: errors.join('. '),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (rate <= 0 || rate >= 1) {
+      toast({
+        title: "Invalid Interest Rate",
+        description: "Interest rate must be between 0% and 100%.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     const monthlyPayment = (principal * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
     const totalPayment = monthlyPayment * months;
@@ -81,6 +122,12 @@ export const AmortizationCalculator = () => {
       totalInterest,
       schedule,
     });
+
+    // Success toast
+    toast({
+      title: "Calculation Complete!",
+      description: `Your amortization schedule has been generated. Monthly payment: $${monthlyPayment.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP`,
+    });
   };
 
   const calculateRemaining = () => {
@@ -89,7 +136,40 @@ export const AmortizationCalculator = () => {
     const current = parseInt(currentMonth);
     const totalTerms = parseInt(originalTerm);
 
-    if (!payment || !rate || !current || !totalTerms) return;
+    // Validate inputs
+    const errors = validateInputs({
+      'Monthly Payment': payment,
+      'Interest Rate': parseFloat(remainingRate),
+      'Current Month': current,
+      'Original Term': totalTerms
+    });
+
+    if (errors.length > 0) {
+      toast({
+        title: "Invalid Input",
+        description: errors.join('. '),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (current >= totalTerms) {
+      toast({
+        title: "Invalid Current Month",
+        description: "Current month must be less than the original term.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (rate <= 0 || rate >= 1) {
+      toast({
+        title: "Invalid Interest Rate",
+        description: "Interest rate must be between 0% and 100%.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     // Calculate original loan amount
     const originalLoan = (payment * (Math.pow(1 + rate, totalTerms) - 1)) / (rate * Math.pow(1 + rate, totalTerms));
@@ -127,6 +207,12 @@ export const AmortizationCalculator = () => {
       remainingPayments,
       totalRemaining,
       schedule,
+    });
+
+    // Success toast
+    toast({
+      title: "Remaining Balance Calculated!",
+      description: `Remaining balance: $${balance.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} COP with ${remainingPayments} payments left.`,
     });
   };
 
