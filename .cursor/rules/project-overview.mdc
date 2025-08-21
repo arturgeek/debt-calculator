@@ -1,0 +1,27 @@
+# Debt Calculator Project Overview
+
+This is a React/TypeScript debt calculator application that provides loan amortization calculations. The app features:
+
+- **Main Calculator**: Standard loan amortization with monthly payment, total interest, and payment schedule
+- **Remaining Balance Calculator**: Calculate remaining balance and payments after a certain number of months
+- **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Key Files
+- Main entry: [src/main.tsx](mdc:src/main.tsx)
+- App component: [src/App.tsx](mdc:src/App.tsx)
+- Main page: [src/pages/Index.tsx](mdc:src/pages/Index.tsx)
+- Core calculator: [src/components/AmortizationCalculator.tsx](mdc:src/components/AmortizationCalculator.tsx)
+- Results table: [src/components/AmortizationTable.tsx](mdc:src/components/AmortizationTable.tsx)
+
+## Technology Stack
+- React 18+ with TypeScript
+- Vite build tool
+- Tailwind CSS with shadcn/ui components
+- React Router for navigation
+- React Query for data management
+- Lucide React for icons
+description:
+globs:
+alwaysApply: false
+---

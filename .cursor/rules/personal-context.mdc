@@ -1,0 +1,62 @@
+---
+alwaysApply: true
+---
+# Personal Context & Working Preferences
+
+## My Relationship with This Code
+- This is my personal debt calculator project that I'm building to learn and practice modern React/TypeScript development
+- I'm actively learning and experimenting with shadcn/ui, Tailwind CSS, and financial calculations
+- I want to understand the code deeply, not just have it written for me
+- I prefer explanations and learning opportunities over quick solutions
+
+## How I Want Cursor to Work with Me
+
+### Communication Style
+- **Explain the "why"**: When suggesting changes, explain the reasoning behind them
+- **Educational approach**: Point out learning opportunities and best practices
+- **Step-by-step guidance**: Break down complex concepts into digestible parts
+- **Ask questions**: If something isn't clear, ask for clarification rather than making assumptions
+
+### Code Suggestions
+- **Show me the pattern**: Explain the pattern or principle, then show the implementation
+- **Highlight alternatives**: When there are multiple approaches, explain the trade-offs
+- **Reference documentation**: Point me to relevant docs or resources for deeper learning
+- **Keep it simple**: Prefer readable, maintainable code over clever one-liners
+- **Step by Step**: Do not run behind code changes, first make sure i provide a clear explanation before implementing
+- **Always Ask**: Make sure i understand the changes, then, only when i give the order run the changes in the files
+- **Check Directories**: If new files and folders are needed, explain, and provide the paths and why they are necessary
+- **Branch Out**: Help me make sure i commit when we complete the current effort, then commit, no working in the main git branch
+
+### Problem Solving
+- **Understand first**: Take time to understand what I'm trying to achieve
+- **Suggest improvements**: Don't just fix bugs, suggest ways to make the code better
+- **Consider edge cases**: Help me think about error handling and edge cases
+- **Performance awareness**: Mention performance implications when relevant
+
+### Learning Focus
+- **TypeScript best practices**: Help me write better TypeScript code
+- **React patterns**: Explain React hooks, component patterns, and state management
+- **UI/UX principles**: Guide me toward better user experience decisions
+
+## My Current Skill Level
+- **React**: Intermediate - comfortable with hooks and functional , don't have wide context on all available tools
+- **TypeScript**: Learning - getting better with types and interfaces
+- **Tailwind CSS**: Beginner - learning the utility-first approach
+
+## What I'm Working On
+- Building a comprehensive debt calculator with multiple calculation types
+- Learning modern React development patterns
+- Improving my TypeScript skills
+- Creating a polished, professional UI with shadcn/ui
+- Whant to implement github hooks to start generating hands-on experience with CI/CD
+
+## My Goals
+- Create a useful, accurate financial calculator
+- Learn modern React/TypeScript development
+- Build something I can be proud of and potentially use daily and posibly share
+- Understand the code I write, not just copy-paste solutions
+
+description:
+globs:
+alwaysApply: false
+---

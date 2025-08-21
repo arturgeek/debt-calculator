@@ -1,0 +1,41 @@
+# Project Configuration
+
+## Build System
+- Vite for development and production builds
+- TypeScript configuration in [tsconfig.json](mdc:tsconfig.json)
+- Tailwind CSS with custom configuration in [tailwind.config.ts](mdc:tailwind.config.ts)
+- ESLint for code linting in [eslint.config.js](mdc:eslint.config.js)
+
+## Dependencies
+- Core: React 18+, TypeScript, Vite
+- UI: shadcn/ui, Tailwind CSS, Radix UI primitives
+- Routing: React Router DOM
+- State: React Query, React Hook Form
+- Icons: Lucide React
+- Validation: Zod
+
+## Development Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## File Structure
+```
+src/
+├── components/          # Reusable components
+│   ├── ui/             # shadcn/ui components
+│   └── *.tsx           # Custom components
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── *.tsx               # App entry points
+```
+
+## Import Aliases
+- `@/` points to `src/` directory
+- Configured in TypeScript and Vite settings
+description:
+globs:
+alwaysApply: false
+---

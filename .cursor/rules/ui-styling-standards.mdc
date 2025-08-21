@@ -1,0 +1,35 @@
+# UI and Styling Standards
+
+## Component Library
+- Use shadcn/ui components for consistent design
+- Import from `@/components/ui/` directory
+- Follow shadcn/ui patterns and conventions
+
+## Styling Approach
+- Use Tailwind CSS for all styling
+- Leverage the custom color scheme defined in [tailwind.config.ts](mdc:tailwind.config.ts)
+- Use semantic color classes (primary, secondary, destructive, etc.)
+- Apply responsive design with Tailwind breakpoints
+
+## Layout Patterns
+- Use Card components for content sections
+- Implement proper spacing with Tailwind utilities
+- Use Grid and Flexbox for responsive layouts
+- Apply consistent padding and margins
+
+## Form Components
+- Use Input, Label, and Button components from shadcn/ui
+- Implement proper form validation
+- Use Tabs component for multi-step forms
+- Apply consistent form spacing and layout
+
+## Color Usage
+- Primary colors for main actions and branding
+- Secondary colors for supporting elements
+- Destructive colors for errors and warnings
+- Muted colors for disabled states
+- Financial colors for money-related displays
+description:
+globs:
+alwaysApply: false
+---

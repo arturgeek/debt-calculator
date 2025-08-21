@@ -1,0 +1,45 @@
+# Calculator Logic Standards
+
+## Mathematical Calculations
+- Use precise decimal arithmetic for financial calculations
+- Implement proper rounding for currency display
+- Handle edge cases (zero values, invalid inputs)
+- Validate input ranges and formats
+
+## State Management for Calculations
+- Store calculation results in structured objects
+- Use TypeScript interfaces for calculation results
+- Implement proper error handling for invalid inputs
+- Clear results when inputs change
+
+## Data Structures
+```typescript
+interface LoanCalculation {
+  monthlyPayment: number;
+  totalPayment: number;
+  totalInterest: number;
+  schedule: Array<{
+    month: number;
+    payment: number;
+    principal: number;
+    interest: number;
+    balance: number;
+  }>;
+}
+```
+
+## Calculation Functions
+- Separate calculation logic from UI components
+- Use pure functions for mathematical operations
+- Implement proper input validation
+- Handle division by zero and other edge cases
+
+## Display Formatting
+- Format currency values with proper decimal places
+- Use consistent number formatting throughout
+- Display percentages with appropriate precision
+- Handle large numbers with proper formatting
+description:
+globs:
+alwaysApply: false
+---
