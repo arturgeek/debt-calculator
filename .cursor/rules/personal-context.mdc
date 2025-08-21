@@ -37,6 +37,7 @@ alwaysApply: true
 - **TypeScript best practices**: Help me write better TypeScript code
 - **React patterns**: Explain React hooks, component patterns, and state management
 - **UI/UX principles**: Guide me toward better user experience decisions
+- **CI/CD**: Novice, i only had implemented some pre-commit hooks and edited some gitlab CI files but pretty basic
 
 ## My Current Skill Level
 - **React**: Intermediate - comfortable with hooks and functional , don't have wide context on all available tools
