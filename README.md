@@ -1,73 +1,177 @@
-# Welcome to your Lovable project
+# Debt Calculator
 
-## Project info
+A comprehensive debt calculator built with React, TypeScript, and shadcn/ui. This application provides accurate loan amortization calculations with a modern, responsive interface.
 
-**URL**: https://lovable.dev/projects/58ef94f1-c46e-4168-be8a-c4fe69b9666e
+##  Features
 
-## How can I edit this code?
+- **Loan Amortization Calculator**: Calculate monthly payments, total interest, and complete payment schedules
+- **Remaining Balance Calculator**: Determine remaining balance and payments after a specific number of months
+- **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+- **Responsive Design**: Optimized for desktop and mobile devices
+- **TypeScript**: Full type safety and better development experience
+- **CI/CD Pipeline**: Automated deployment with GitHub Actions and Vercel
 
-There are several ways of editing your application.
+## 🛠️ Technology Stack
 
-**Use Lovable**
+- **Frontend**: React 18+ with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Routing**: React Router DOM
+- **State Management**: React Query
+- **Icons**: Lucide React
+- **Deployment**: Vercel with GitHub Actions CI/CD
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/58ef94f1-c46e-4168-be8a-c4fe69b9666e) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Node.js 18+ and npm
 
-**Use your preferred IDE**
+### Local Development
+```bash
+# Clone the repository
+git clone https://github.com/arturgeek/debt-calculator.git
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Navigate to project directory
+cd debt-calculator
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗️ Build & Deployment
 
-**Use GitHub Codespaces**
+### Build for Production
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Preview Production Build
+```bash
+npm run preview
+```
 
-## What technologies are used for this project?
+### Automated Deployment
+This project uses GitHub Actions for continuous integration and deployment:
+- **Linting**: ESLint with TypeScript support
+- **Build Verification**: Ensures the project builds successfully
+- **Automatic Deployment**: Deploys to Vercel on push to main branch
 
-This project is built with:
+## 🧮 Calculator Features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Amortization Calculator
+- Calculate monthly payment amounts
+- View total interest paid over loan term
+- Generate complete payment schedule
+- Handle various loan types and terms
 
-## How can I deploy this project?
+### Remaining Balance Calculator
+- Calculate remaining balance after X months
+- Determine remaining payments
+- Useful for refinancing decisions
 
-Simply open [Lovable](https://lovable.dev/projects/58ef94f1-c46e-4168-be8a-c4fe69b9666e) and click on Share -> Publish.
+### Mathematical Precision
+- Precise decimal arithmetic for financial calculations
+- Proper rounding for currency display
+- Input validation and error handling
+- Edge case management (zero values, invalid inputs)
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 UI/UX Features
 
-Yes, you can!
+- **Modern Design**: Clean, professional interface using shadcn/ui
+- **Responsive Layout**: Works seamlessly on all device sizes
+- **Accessibility**: Built with accessibility best practices
+- **Dark/Light Mode**: Theme support (if implemented)
+- **Form Validation**: Real-time input validation and error messages
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📁 Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+src/
+├── components/
+│   ├── AmortizationCalculator.tsx  # Main calculator logic
+│   ├── AmortizationTable.tsx       # Results display
+│   └── ui/                         # shadcn/ui components
+├── pages/
+│   ├── Index.tsx                   # Main application page
+│   └── NotFound.tsx                # 404 page
+├── hooks/                          # Custom React hooks
+├── lib/                            # Utility functions
+└── main.tsx                        # Application entry point
+```
+
+## 🔧 Development
+
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+### Code Standards
+- TypeScript for type safety
+- ESLint for code quality
+- Prettier for code formatting
+- React best practices and hooks
+- Component-based architecture
+
+## 🖥️ Cursor IDE Support
+
+This project includes comprehensive Cursor IDE configuration for enhanced development experience:
+
+### Cursor Rules
+The project includes `.cursor/rules/` configuration files that provide:
+- **Project Standards**: Consistent coding patterns and best practices
+- **Calculator Logic Standards**: Mathematical precision and financial calculation guidelines
+- **React/TypeScript Standards**: Modern React patterns and TypeScript best practices
+- **UI/Styling Standards**: shadcn/ui and Tailwind CSS conventions
+- **Personal Development Context**: Learning-focused development approach
+
+### Benefits for Contributors
+- **Consistent Code Style**: Automated suggestions follow project standards
+- **Learning-Focused**: Explanations and educational guidance
+- **Type Safety**: Enhanced TypeScript support and suggestions
+- **Component Patterns**: Best practices for React component development
+- **Financial Calculations**: Specialized guidance for mathematical precision
+
+### Getting Started with Cursor
+1. **Install Cursor IDE**: Download from [cursor.sh](https://cursor.sh)
+2. **Clone the repository**: The `.cursor/rules/` folder will be automatically detected
+3. **Enhanced AI Assistance**: Get contextual suggestions based on project standards
+4. **Learning Support**: Receive explanations and educational guidance while coding
+
+## 🚀 Deployment
+
+This project is automatically deployed to Vercel through GitHub Actions:
+
+1. **Push to main branch** triggers the CI/CD pipeline
+2. **Linting and build verification** ensure code quality
+3. **Automatic deployment** to Vercel production environment
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+##  Acknowledgments
+
+- **Initial Development**: This project was initially developed using [Lovable](https://lovable.dev), an AI-powered development platform
+- **UI Components**: Built with [shadcn/ui](https://ui.shadcn.com/) for consistent, accessible components
+- **Styling**: Powered by [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- **Icons**: Beautiful icons from [Lucide React](https://lucide.dev/)
+- **IDE Support**: Enhanced development experience with [Cursor IDE](https://cursor.sh)
+
+---
+
+**Built with ❤️ using modern web technologies**
